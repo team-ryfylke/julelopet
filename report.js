@@ -23,7 +23,7 @@ function renderReport(data) {
   const sorted = [...data.participants].sort((a, b) =>
     collator.compare(b.start || '', a.start || '') || collator.compare(a.name, b.name));
   const startTimes = [...new Set(sorted.map(person => person.start || 'ukjent'))];
-  const colors = ['#dbeaff', '#f0f6ff', '#e9f3cc', '#edf0fc'];
+  const colors = ['#dbeaff', '#f0f6ff'];
   const groupColors = new Map(startTimes.map((time, index) => [time, colors[index % colors.length]]));
   const finish = '11:40';
   const finishMinutes = 11 * 60 + 40;
