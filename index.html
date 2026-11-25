@@ -38,12 +38,6 @@
     .strava { border-top: .3rem solid #ed571b; }
     .strava a { color: #124b9a; font-weight: 700; }
     .strava-links { display: flex; flex-wrap: wrap; gap: .5rem 1rem; margin-top: .8rem; }
-    .analytics-footer { padding-bottom: 1.5rem; }
-    .analytics-panel { margin-top: .75rem; }
-    .analytics-actions { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: .75rem; }
-    .analytics-footer button { font: inherit; cursor: pointer; }
-    .analytics-settings { color: #124b9a; border: 0; background: transparent; padding: 0; text-decoration: underline; }
-    .analytics-actions button { color: #102548; background: #edf4ff; border: 1px solid #819bc1; border-radius: .5rem; padding: .45rem .75rem; }
     .chart { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(.4rem, 3vw, 2rem); margin-top: 1rem; }
     .column { display: grid; grid-template-rows: 12rem auto; text-align: center; }
     .plot { display: flex; flex-direction: column; justify-content: end; border-bottom: 1px solid #ccd9ef; }
@@ -85,7 +79,7 @@
     </div>
   </header>
   <main class="wrap">
-    <section aria-labelledby="participants-title" heap-ignore>
+    <section aria-labelledby="participants-title">
       <h2 id="participants-title">Deltakeroversikt</h2>
       <p class="note">Omvendt jaktstart med felles beregnet målgang kl. 11:40.</p>
       <div class="controls">
@@ -120,82 +114,5 @@
     </aside>
     <noscript>Slå på JavaScript for å vise deltakerlisten og støtten.</noscript>
   </main>
-  <footer class="wrap analytics-footer">
-    <button type="button" class="analytics-settings" id="analytics-settings" aria-controls="analytics-panel" aria-expanded="false" hidden>Innstillinger for besøksstatistikk</button>
-    <section class="analytics-panel" id="analytics-panel" aria-labelledby="analytics-title" hidden>
-      <h2 id="analytics-title">Besøksstatistikk</h2>
-      <p class="note">Hvis du tillater statistikk, bruker Team Ryfylke Heap og informasjonskapsler for å måle sidevisninger og hvor besøkene kommer fra. Du kan endre valget når som helst.</p>
-      <div class="analytics-actions">
-        <button type="button" id="analytics-decline">Avslå statistikk</button>
-        <button type="button" id="analytics-accept">Tillat statistikk</button>
-      </div>
-    </section>
-  </footer>
-  <script>
-    (() => {
-      const key = 'julelopet-analytics-consent';
-      const settings = document.querySelector('#analytics-settings');
-      const panel = document.querySelector('#analytics-panel');
-      let choice;
-      let loaded = false;
-      try { choice = localStorage.getItem(key); } catch {}
-
-      function showPanel(open) {
-        panel.hidden = !open;
-        settings.setAttribute('aria-expanded', String(open));
-      }
-
-      function loadHeap() {
-        if (loaded || location.origin !== 'https://team-ryfylke.github.io') return;
-        loaded = true;
-        window.heapReadyCb = window.heapReadyCb || [];
-        const heap = window.heap = window.heap || [];
-        heap.load = function (id, config) {
-          heap.envId = id;
-          heap.clientConfig = { ...config, shouldFetchServerConfig: false };
-          const script = document.createElement('script');
-          script.async = true;
-          script.src = 'https://cdn.us.heap-api.com/config/' + id + '/heap_config.js';
-          const methods = [
-            'init', 'startTracking', 'stopTracking', 'track', 'resetIdentity', 'identify',
-            'getSessionId', 'getUserId', 'getIdentity', 'addUserProperties', 'addEventProperties',
-            'removeEventProperty', 'clearEventProperties', 'addAccountProperties', 'addAdapter',
-            'addTransformer', 'addTransformerFn', 'onReady', 'addPageviewProperties',
-            'removePageviewProperty', 'clearPageviewProperties', 'trackPageview',
-          ];
-          for (const name of methods) {
-            heap[name] = (...args) => window.heapReadyCb.push({
-              name, fn: () => window.heap[name]?.apply(window.heap, args),
-            });
-          }
-          document.head.append(script);
-        };
-        heap.load('1537318957', {
-          disableSessionReplay: true,
-          disableTextCapture: true,
-          disableInteractionEvents: ['click', 'submit', 'change'],
-        });
-      }
-
-      function choose(value) {
-        choice = value;
-        try { localStorage.setItem(key, value); } catch {}
-        showPanel(false);
-        settings.focus();
-        if (choice === 'accepted') loadHeap();
-        else if (loaded) {
-          window.heap.stopTracking();
-          location.reload();
-        }
-      }
-
-      settings.hidden = false;
-      showPanel(choice !== 'accepted' && choice !== 'declined');
-      settings.addEventListener('click', () => showPanel(panel.hidden));
-      document.querySelector('#analytics-decline').addEventListener('click', () => choose('declined'));
-      document.querySelector('#analytics-accept').addEventListener('click', () => choose('accepted'));
-      if (choice === 'accepted') loadHeap();
-    })();
-  </script>
 </body>
 </html>
