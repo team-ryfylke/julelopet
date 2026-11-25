@@ -25,7 +25,6 @@ function renderReport(data) {
   const startTimes = [...new Set(sorted.map(person => person.start || 'ukjent'))];
   const colors = ['#dbeaff', '#f0f6ff'];
   const groupColors = new Map(startTimes.map((time, index) => [time, colors[index % colors.length]]));
-  const finish = '11:40';
   const finishMinutes = 11 * 60 + 40;
   for (const time of startTimes) {
     start.add(new Option(time === 'ukjent' ? 'Ikke oppgitt' : time, time));
@@ -47,7 +46,7 @@ function renderReport(data) {
       row.insertCell().textContent = person.name;
       const [hours, minutes] = (person.start || '').split(':').map(Number);
       const duration = finishMinutes - hours * 60 - minutes;
-      const times = [person.start || '–', duration > 0 ? `${duration} min` : '–', duration > 0 ? finish : '–'];
+      const times = [person.start || '–', duration > 0 ? `${duration} min` : '–'];
       for (const time of times) {
         const cell = row.insertCell();
         cell.className = 'time';
