@@ -20,7 +20,13 @@ function renderReport(data) {
 
   summary.textContent = `${number.format(data.participants.length)} påmeldte · Oppdatert ${timestamp}`;
 
-  const sorted = [...data.participants].sort((a, b) =>
+  const sorted = data.participants.map(person => ({
+    ...person,
+    name: person.name.replace(/\p{L}+/gu, word =>
+      /^(?:Mc|Mac|De|Di|Du|La|Le|Van|Von)\p{Lu}/u.test(word)
+        ? word
+        : word.replace(/(\p{Ll}{2})(?=\p{Lu}\p{Ll})/gu, '$1 ')),
+  })).sort((a, b) =>
     collator.compare(b.start || '', a.start || '') || collator.compare(a.name, b.name));
   const startTimes = [...new Set(sorted.map(person => person.start || 'ukjent'))];
   const colors = ['#dbeaff', '#f0f6ff'];
