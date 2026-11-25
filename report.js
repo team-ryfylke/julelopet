@@ -21,8 +21,12 @@ function renderReport(data) {
   summary.textContent = `${number.format(data.participants.length)} påmeldte · Oppdatert ${timestamp}`;
 
   const sorted = [...data.participants].sort((a, b) =>
-    collator.compare(a.start || '99:99', b.start || '99:99') || collator.compare(a.name, b.name));
-  const startTimes = new Set(sorted.map(person => person.start || 'ukjent'));
+    collator.compare(b.start || '', a.start || '') || collator.compare(a.name, b.name));
+  const startTimes = [...new Set(sorted.map(person => person.start || 'ukjent'))];
+  const colors = ['#dbeaff', '#f0f6ff', '#e9f3cc', '#edf0fc'];
+  const groupColors = new Map(startTimes.map((time, index) => [time, colors[index % colors.length]]));
+  const finish = '11:40';
+  const finishMinutes = 11 * 60 + 40;
   for (const time of startTimes) {
     start.add(new Option(time === 'ukjent' ? 'Ikke oppgitt' : time, time));
   }
@@ -35,10 +39,23 @@ function renderReport(data) {
     count.textContent = matching.length
       ? `Viser ${matching.length} av ${sorted.length} påmeldte`
       : 'Ingen påmeldte samsvarer med søket.';
-    participants.replaceChildren(...matching.map(person => {
+    participants.replaceChildren(...matching.map((person, index) => {
       const row = document.createElement('tr');
+      const firstInGroup = index === 0 || person.start !== matching[index - 1].start;
+      row.classList.toggle('group-first', firstInGroup);
+      row.style.setProperty('--group-color', groupColors.get(person.start || 'ukjent'));
       row.insertCell().textContent = person.name;
-      row.insertCell().textContent = person.start || 'Ikke oppgitt';
+      const [hours, minutes] = (person.start || '').split(':').map(Number);
+      const duration = finishMinutes - hours * 60 - minutes;
+      const times = [person.start || '–', duration > 0 ? `${duration} min` : '–', duration > 0 ? finish : '–'];
+      for (const time of times) {
+        const cell = row.insertCell();
+        cell.className = 'time';
+        const label = document.createElement('span');
+        label.textContent = time;
+        if (!firstInGroup) label.className = 'sr-only';
+        cell.append(label);
+      }
       return row;
     }));
   }
