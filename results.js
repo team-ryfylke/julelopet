@@ -18,7 +18,7 @@
   const dialog = document.createElement('dialog');
   dialog.className = 'result-dialog';
   dialog.setAttribute('aria-labelledby', 'history-title');
-  dialog.innerHTML = '<form method="dialog"><button type="submit">Lukk</button></form><h2 id="history-title"></h2><table class="results-table"><thead><tr><th scope="col">År</th><th scope="col">Plass</th><th scope="col">Tid</th><th scope="col">Pace</th></tr></thead><tbody></tbody></table>';
+  dialog.innerHTML = '<form method="dialog"><button type="submit">Lukk</button></form><h2 id="history-title"></h2><table class="results-table"><thead><tr><th scope="col">År</th><th scope="col">Tid</th><th scope="col">Pace</th></tr></thead><tbody></tbody></table>';
   document.body.append(dialog);
   const heading = dialog.querySelector('h2');
   const historyRows = dialog.querySelector('tbody');
@@ -36,9 +36,9 @@
     return row;
   }
 
-  function renderName(cell, name) {
+  function renderName(cell, name, minimumResults = 1) {
     const entries = names.get(nameKey(displayName(name)));
-    if (!entries) {
+    if (!entries || entries.length < minimumResults) {
       cell.textContent = name;
       return;
     }
@@ -50,7 +50,7 @@
     button.addEventListener('click', () => {
       heading.textContent = name;
       historyRows.replaceChildren(...entries.map(entry =>
-        rowFor([entry.year, entry.place ?? '–', entry.time, entry.pace])));
+        rowFor([entry.year, entry.time, entry.pace])));
       dialog.showModal();
     });
     cell.append(button);
@@ -72,7 +72,7 @@
       : 'Ingen resultater samsvarer med søket.';
     body.replaceChildren(...matching.map(entry => {
       const row = rowFor([entry.place ?? '–', '', entry.time, entry.pace]);
-      renderName(row.cells[1], displayName(entry.name));
+      renderName(row.cells[1], displayName(entry.name), 2);
       return row;
     }));
   }
