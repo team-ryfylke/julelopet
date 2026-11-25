@@ -1,6 +1,6 @@
 window.julelopet = {
   "year": 2026,
-  "updatedAt": "2026-11-25T16:29:34+00:00",
+  "updatedAt": "2026-11-25T19:10:37+00:00",
   "participants": [
     {
       "name": "Christina Nilsen",
@@ -117,6 +117,94 @@ window.julelopet = {
     {
       "name": "Alf Kaasen",
       "start": "10:50"
+    },
+    {
+      "name": "Idar Goa",
+      "start": "10:56"
+    },
+    {
+      "name": "Kristina Myklebost",
+      "start": "10:50"
+    },
+    {
+      "name": "Monica Myklebost",
+      "start": "10:50"
+    },
+    {
+      "name": "Marta Myklebost",
+      "start": "10:50"
+    },
+    {
+      "name": "Lars Melkild",
+      "start": "11:03"
+    },
+    {
+      "name": "Helen Leary",
+      "start": "10:45"
+    },
+    {
+      "name": "Anders Tangen",
+      "start": "10:45"
+    },
+    {
+      "name": "Anders Tangen",
+      "start": "10:45"
+    },
+    {
+      "name": "Anders Tangen",
+      "start": "10:45"
+    },
+    {
+      "name": "Pål Storerud",
+      "start": "10:55"
+    },
+    {
+      "name": "Espen Chapman",
+      "start": "11:13"
+    },
+    {
+      "name": "Mona Moss-Iversen",
+      "start": "10:55"
+    },
+    {
+      "name": "Alf-Erik Malm",
+      "start": "11:00"
+    },
+    {
+      "name": "Gabriel Malm",
+      "start": "11:00"
+    },
+    {
+      "name": "Per Paulsen",
+      "start": "11:06"
+    },
+    {
+      "name": "Fredrik Paulsen",
+      "start": "11:04"
+    },
+    {
+      "name": "Silje Paulsen",
+      "start": "11:04"
+    },
+    {
+      "name": "Kjell Harald Thornes",
+      "start": "11:00"
+    },
+    {
+      "name": "Kari Østerli Frafjord",
+      "start": "10:57"
+    },
+    {
+      "name": "Trine Midthassel",
+      "start": "10:40"
+    },
+    {
+      "name": "Tiki Celine Midthassel",
+      "start": "11:00"
+    },
+    {
+      "name": "Vilde Marie Nystrøm",
+      "start": "10:55"
     }
   ],
   "donations": [
@@ -130,7 +218,7 @@ window.julelopet = {
     },
     {
       "year": 2026,
-      "total": 3450
+      "total": 6500
     }
   ]
 };
