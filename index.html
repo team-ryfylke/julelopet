@@ -69,6 +69,11 @@
     @media (max-width: 25rem) { th, td { padding-inline: .25rem; } .time { font-size: .82rem; } }
     @media (min-width: 48rem) { .hero { grid-template-columns: 1.1fr 1fr; } }
     @media (min-width: 58rem) { main.wrap { grid-template-columns: 1.3fr 1fr; align-items: start; } }
+    .race-gallery { grid-column: 1 / -1; }
+    .race-gallery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; margin: 1rem 0; }
+    .race-gallery-grid img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: .65rem; }
+    .race-gallery a { color: #124b9a; font-weight: 700; }
+    @media (max-width: 32rem) { .race-gallery-grid { grid-template-columns: 1fr; } }
   </style>
   <script src="data.js" defer></script>
   <script src="report.js" defer></script>
@@ -124,6 +129,15 @@
       </section>
     </aside>
     <noscript>Slå på JavaScript for å vise deltakerlisten og støtten.</noscript>
+    <section class="race-gallery" aria-labelledby="race-gallery-title">
+      <h2 id="race-gallery-title">Glimt fra Juleløpet 2025</h2>
+      <div class="race-gallery-grid">
+        <img src="images/julelopet-morgensol.jpg" alt="Lav vintersol over løypa og deltakerne ved vannet" loading="lazy" decoding="async">
+        <img src="images/julelopet-lopere.jpg" alt="Løpere i nisseluer langs Stokkavatnet" loading="lazy" decoding="async">
+        <img src="images/julelopet-stokkavatnet.jpg" alt="Deltakere samlet mellom trærne ved Stokkavatnet" loading="lazy" decoding="async">
+      </div>
+      <a href="https://www.facebook.com/julelopet/photos" target="_blank" rel="noopener">Se flere bilder på Facebook</a>
+    </section>
   </main>
 </body>
 </html>
