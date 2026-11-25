@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="nb">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071a3d">
+  <title>Resultater 2025 – Juleløpet</title>
+  <link rel="stylesheet" href="results.css">
+  <script src="results-data.js" defer></script>
+  <script src="results.js" defer></script>
+</head>
+<body class="results-page">
+  <header class="results-header">
+    <div class="results-wrap">
+      <p>Team Ryfylke · Stokkavatnet</p>
+      <h1>Juleløpet 2025</h1>
+      <nav aria-label="Juleløpet">
+        <a href="index.html">Deltakeroversikt 2026</a>
+        <a href="resultat-2024.html">Resultater 2024</a>
+      </nav>
+    </div>
+  </header>
+  <main class="results-wrap">
+    <section class="results-card" aria-labelledby="results-title">
+      <h2 id="results-title">Resultatliste</h2>
+      <label for="results-search">Søk etter navn</label>
+      <input id="results-search" type="search" autocomplete="off">
+      <p id="results-count" role="status"></p>
+      <table class="results-table" data-results-year="2025">
+        <thead><tr><th scope="col">Plass</th><th scope="col">Navn</th><th scope="col">Tid</th><th scope="col">Pace</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <noscript>Slå på JavaScript for å vise resultatlista.</noscript>
+    </section>
+  </main>
+</body>
+</html>

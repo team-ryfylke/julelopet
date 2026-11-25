@@ -22,10 +22,7 @@ function renderReport(data) {
 
   const sorted = data.participants.map(person => ({
     ...person,
-    name: person.name.replace(/\p{L}+/gu, word =>
-      /^(?:Mc|Mac|De|Di|Du|La|Le|Van|Von)\p{Lu}/u.test(word)
-        ? word
-        : word.replace(/(\p{Ll}{2})(?=\p{Lu}\p{Ll})/gu, '$1 ')),
+    name: window.julelopetHistory.displayName(person.name),
   })).sort((a, b) =>
     collator.compare(b.start || '', a.start || '') || collator.compare(a.name, b.name));
   const startTimes = [...new Set(sorted.map(person => person.start || 'ukjent'))];
@@ -49,7 +46,7 @@ function renderReport(data) {
       const firstInGroup = index === 0 || person.start !== matching[index - 1].start;
       row.classList.toggle('group-first', firstInGroup);
       row.style.setProperty('--group-color', groupColors.get(person.start || 'ukjent'));
-      row.insertCell().textContent = person.name;
+      window.julelopetHistory.renderName(row.insertCell(), person.name);
       const [hours, minutes] = (person.start || '').split(':').map(Number);
       const duration = finishMinutes - hours * 60 - minutes;
       const times = [person.start || '–', duration > 0 ? `${duration} min` : '–'];

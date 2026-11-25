@@ -75,6 +75,9 @@
     .race-gallery a { color: #124b9a; font-weight: 700; }
     @media (max-width: 32rem) { .race-gallery-grid { grid-template-columns: 1fr; } }
   </style>
+  <link rel="stylesheet" href="results.css">
+  <script src="results-data.js" defer></script>
+  <script src="results.js" defer></script>
   <script src="data.js" defer></script>
   <script src="report.js" defer></script>
 </head>
@@ -126,15 +129,22 @@
       <section aria-labelledby="results-title">
         <h2 id="results-title">Resultatliste</h2>
         <p class="note">Resultatlista legges ut her på samme side etter løpet på julaften.</p>
+        <nav class="results-archive" aria-label="Tidligere resultatlister">
+          <a href="resultat-2025.html" target="_blank" rel="noopener">Resultater 2025</a>
+          <a href="resultat-2024.html" target="_blank" rel="noopener">Resultater 2024</a>
+        </nav>
       </section>
     </aside>
     <noscript>Slå på JavaScript for å vise deltakerlisten og støtten.</noscript>
     <section class="race-gallery" aria-labelledby="race-gallery-title">
-      <h2 id="race-gallery-title">Glimt fra Juleløpet 2025</h2>
+      <h2 id="race-gallery-title">Glimt fra tidligere juleløp</h2>
       <div class="race-gallery-grid">
         <img src="images/julelopet-morgensol.jpg" alt="Lav vintersol over løypa og deltakerne ved vannet" loading="lazy" decoding="async">
         <img src="images/julelopet-lopere.jpg" alt="Løpere i nisseluer langs Stokkavatnet" loading="lazy" decoding="async">
         <img src="images/julelopet-stokkavatnet.jpg" alt="Deltakere samlet mellom trærne ved Stokkavatnet" loading="lazy" decoding="async">
+        <img src="images/49259650_731514367220572_8505196948834222080_n.jpg" alt="Deltakere samlet ved vannet før løpet" loading="lazy" decoding="async">
+        <img src="images/877716776_1832102471430753_1789983253031508587_n.jpg" alt="Løpere på grusveien langs vannet" loading="lazy" decoding="async">
+        <img src="images/889936148_1834943214480012_5994592300404923959_n.jpg" alt="Gruppebilde av løpere og arrangører ved startområdet" loading="lazy" decoding="async">
       </div>
       <a href="https://www.facebook.com/julelopet/photos" target="_blank" rel="noopener">Se flere bilder på Facebook</a>
     </section>
