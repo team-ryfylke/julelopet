@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="nb">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102c29">
+  <title>Juleløpet 2026 – Deltakeroversikt</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #152c29; background: #f1f6f2; font: 1rem/1.5 system-ui, sans-serif; }
+    header { background: radial-gradient(ellipse at top right, #295a4e, transparent 67%), #102c29; color: #fff; }
+    .wrap { width: min(70rem, 100% - 2rem); margin: auto; }
+    .hero { padding: clamp(2.5rem, 8vw, 6rem) 0 3rem; }
+    h1, h2, p { margin: 0; }
+    h1 { font-size: clamp(3rem, 9vw, 7rem); letter-spacing: -.065em; line-height: 1; }
+    h2 { font-size: clamp(1.65rem, 4vw, 2.3rem); letter-spacing: -.04em; line-height: 1.15; }
+    .eyebrow { color: #def58f; margin-bottom: .5rem; font-weight: 700; }
+    .meta { margin-top: 1rem; color: #d6e6df; }
+    main { padding: 1.5rem 0 3rem; display: grid; gap: 1.5rem; }
+    section { background: #fff; border: 1px solid #d8e6de; border-radius: 1.25rem; padding: clamp(1rem, 4vw, 2rem); min-width: 0; }
+    .note { color: #48615b; margin-top: .5rem; }
+    .chart { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(.4rem, 3vw, 2rem); margin-top: 1rem; }
+    .column { display: grid; grid-template-rows: 12rem auto; text-align: center; }
+    .plot { display: flex; flex-direction: column; justify-content: end; border-bottom: 1px solid #cbdcd3; }
+    .amount { font-weight: 750; font-size: clamp(.8rem, 3vw, 1.1rem); white-space: nowrap; margin-bottom: .25rem; }
+    .bar { height: var(--height); min-height: 2px; width: 72%; margin: 0 auto; border-radius: .55rem .55rem 0 0; background: #417e70; }
+    .current .bar { background: #bbdf42; animation: grow 950ms cubic-bezier(.2,.7,.3,1) both; transform-origin: bottom; }
+    @keyframes grow { from { transform: scaleY(0); } }
+    @media (prefers-reduced-motion: reduce) { .current .bar { animation: none; } }
+    .year { padding-top: .5rem; font-weight: 700; }
+    .controls { display: flex; flex-wrap: wrap; align-items: end; gap: .75rem; margin: 1rem 0 .75rem; }
+    label { display: grid; gap: .25rem; font-weight: 650; }
+    label:first-child { flex: 1 1 13rem; }
+    input, select { font: inherit; padding: .55rem .7rem; color: inherit; background: #fff; border: 1px solid #8da99d; border-radius: .5rem; width: 100%; }
+    :focus-visible { outline: 3px solid #457e6d; outline-offset: 3px; }
+    table { width: 100%; border-collapse: collapse; margin-top: .5rem; text-align: left; }
+    th, td { padding: .5rem .25rem; border-bottom: 1px solid #e2ebe6; }
+    td:last-child, th:last-child { text-align: right; white-space: nowrap; }
+    @media (min-width: 58rem) { main.wrap { grid-template-columns: 1fr .85fr; align-items: start; } }
+  </style>
+  <script src="data.js" defer></script>
+  <script src="report.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="wrap hero">
+      <p class="eyebrow">Deltakeroversikt</p>
+      <h1>Juleløpet 2026</h1>
+      <p class="meta" id="summary"></p>
+    </div>
+  </header>
+  <main class="wrap">
+    <section aria-labelledby="participants-title">
+      <h2 id="participants-title">Påmeldte</h2>
+      <div class="controls">
+        <label>Søk etter navn <input id="search" type="search" autocomplete="off"></label>
+        <label>Starttid <select id="start"><option value="">Alle starttider</option></select></label>
+      </div>
+      <p id="count" class="note" role="status"></p>
+      <table>
+        <thead><tr><th scope="col">Navn</th><th scope="col">Starttid</th></tr></thead>
+        <tbody id="participants"></tbody>
+      </table>
+    </section>
+    <section aria-labelledby="donations-title">
+      <h2 id="donations-title">Støtte til Varmestuens Venner</h2>
+      <p class="note">Samlet støtte oppgitt i påmeldingen. 2026 er hittil i år.</p>
+      <div class="chart" id="donations"></div>
+    </section>
+    <noscript>Slå på JavaScript for å vise deltakerlisten og støtten.</noscript>
+  </main>
+</body>
+</html>
