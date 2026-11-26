@@ -18,7 +18,10 @@ function renderReport(data) {
     dateStyle: 'medium', timeStyle: 'short', timeZone: 'Europe/Oslo',
   }).format(new Date(data.updatedAt));
 
-  summary.textContent = `${number.format(data.participants.length)} påmeldte · Oppdatert ${timestamp}`;
+  const participantTotal = document.createElement('strong');
+  participantTotal.className = 'participant-total';
+  participantTotal.textContent = `${number.format(data.participants.length)} påmeldte`;
+  summary.replaceChildren(participantTotal, ` · Oppdatert ${timestamp}`);
 
   const sorted = data.participants.map(person => ({
     ...person,
