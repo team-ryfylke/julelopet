@@ -1,6 +1,6 @@
 window.julelopet = {
   "year": 2026,
-  "updatedAt": "2026-11-25T19:10:37+00:00",
+  "updatedAt": "2026-11-26T17:27:48+00:00",
   "participants": [
     {
       "name": "Christina Nilsen",
@@ -59,11 +59,11 @@ window.julelopet = {
       "start": "10:50"
     },
     {
-      "name": "Anders MælandNilsen",
+      "name": "Magnus MælandNilsen",
       "start": "11:00"
     },
     {
-      "name": "Magnus MælandNilsen",
+      "name": "Anders MælandNilsen",
       "start": "11:00"
     },
     {
@@ -123,11 +123,11 @@ window.julelopet = {
       "start": "10:56"
     },
     {
-      "name": "Kristina Myklebost",
+      "name": "Monica Myklebost",
       "start": "10:50"
     },
     {
-      "name": "Monica Myklebost",
+      "name": "Kristina Myklebost",
       "start": "10:50"
     },
     {
@@ -167,11 +167,11 @@ window.julelopet = {
       "start": "10:55"
     },
     {
-      "name": "Alf-Erik Malm",
+      "name": "Gabriel Malm",
       "start": "11:00"
     },
     {
-      "name": "Gabriel Malm",
+      "name": "Alf-Erik Malm",
       "start": "11:00"
     },
     {
@@ -205,6 +205,94 @@ window.julelopet = {
     {
       "name": "Vilde Marie Nystrøm",
       "start": "10:55"
+    },
+    {
+      "name": "Alf Håkon Haugland",
+      "start": "10:58"
+    },
+    {
+      "name": "Sebastian Grøsvik",
+      "start": "11:02"
+    },
+    {
+      "name": "Christoffer Bigseth Olsen",
+      "start": "11:06"
+    },
+    {
+      "name": "Håkon Monan Husebø",
+      "start": "11:03"
+    },
+    {
+      "name": "Henriette Monan Husebø",
+      "start": "10:52"
+    },
+    {
+      "name": "Bjørn Helge Husebø",
+      "start": "11:03"
+    },
+    {
+      "name": "Stig Helland",
+      "start": "11:06"
+    },
+    {
+      "name": "Anders Idsø",
+      "start": "11:10"
+    },
+    {
+      "name": "Jørn Tveit",
+      "start": "11:04"
+    },
+    {
+      "name": "Stian Haugen",
+      "start": "11:05"
+    },
+    {
+      "name": "Kristine Morsund",
+      "start": "11:01"
+    },
+    {
+      "name": "Tor Christian Kiønig Mæaland",
+      "start": "10:57"
+    },
+    {
+      "name": "Brit Randulff",
+      "start": "10:45"
+    },
+    {
+      "name": "Erik Haaland",
+      "start": "10:52"
+    },
+    {
+      "name": "Charlotte Sæland",
+      "start": "10:50"
+    },
+    {
+      "name": "Mio Kleveland Madland",
+      "start": "10:40"
+    },
+    {
+      "name": "Malin Kleveland Madland",
+      "start": "10:40"
+    },
+    {
+      "name": "Tore Kleveland Madland",
+      "start": "10:40"
+    },
+    {
+      "name": "Ingebret Stana",
+      "start": "11:00"
+    },
+    {
+      "name": "Eirik Iversen",
+      "start": "11:00"
+    },
+    {
+      "name": "Edvard Hansgaard Iversen",
+      "start": "11:00"
+    },
+    {
+      "name": "Charlie Hansgaard Iversen",
+      "start": "11:00"
     }
   ],
   "donations": [
@@ -218,7 +306,7 @@ window.julelopet = {
     },
     {
       "year": 2026,
-      "total": 6500
+      "total": 8351
     }
   ]
 };
