@@ -1,6 +1,6 @@
 window.julelopet = {
   "year": 2026,
-  "updatedAt": "2026-11-27T19:50:06+01:00",
+  "updatedAt": "2026-11-27T20:50:05+01:00",
   "participants": [
     {
       "name": "Christina Nilsen",
@@ -59,11 +59,11 @@ window.julelopet = {
       "start": "10:50"
     },
     {
-      "name": "Magnus MælandNilsen",
+      "name": "Anders MælandNilsen",
       "start": "11:00"
     },
     {
-      "name": "Anders MælandNilsen",
+      "name": "Magnus MælandNilsen",
       "start": "11:00"
     },
     {
@@ -329,6 +329,14 @@ window.julelopet = {
     {
       "name": "Paul magnus Heggland",
       "start": "11:00"
+    },
+    {
+      "name": "Eirik Andersen",
+      "start": "11:00"
+    },
+    {
+      "name": "Sigbjørn Egeland",
+      "start": "10:50"
     }
   ],
   "donations": [
@@ -342,7 +350,7 @@ window.julelopet = {
     },
     {
       "year": 2026,
-      "total": 9151
+      "total": 9301
     }
   ]
 };
