@@ -1,6 +1,6 @@
 window.julelopet = {
   "year": 2026,
-  "updatedAt": "2026-11-28T16:50:07+01:00",
+  "updatedAt": "2026-11-28T17:50:06+01:00",
   "participants": [
     {
       "name": "Christina Nilsen",
