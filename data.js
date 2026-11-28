@@ -1,6 +1,6 @@
 window.julelopet = {
   "year": 2026,
-  "updatedAt": "2026-11-28T17:50:06+01:00",
+  "updatedAt": "2026-11-28T18:50:06+01:00",
   "participants": [
     {
       "name": "Christina Nilsen",
@@ -345,6 +345,10 @@ window.julelopet = {
     {
       "name": "Ellen Rekve",
       "start": "10:45"
+    },
+    {
+      "name": "Mariette Abrahamsson",
+      "start": "10:52"
     }
   ],
   "donations": [
@@ -358,7 +362,7 @@ window.julelopet = {
     },
     {
       "year": 2026,
-      "total": 9591
+      "total": 9841
     }
   ]
 };
