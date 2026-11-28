@@ -1,6 +1,6 @@
 window.julelopet = {
   "year": 2026,
-  "updatedAt": "2026-11-28T19:50:16+01:00",
+  "updatedAt": "2026-11-28T20:50:06+01:00",
   "participants": [
     {
       "name": "Christina Nilsen",
@@ -357,6 +357,18 @@ window.julelopet = {
     {
       "name": "Monika Kolnes Goa",
       "start": "10:56"
+    },
+    {
+      "name": "Adrian Nilsen-Heggelund",
+      "start": "11:08"
+    },
+    {
+      "name": "Nina Eltervaag",
+      "start": "10:52"
+    },
+    {
+      "name": "Lucas Ims",
+      "start": "10:52"
     }
   ],
   "donations": [
@@ -370,7 +382,7 @@ window.julelopet = {
     },
     {
       "year": 2026,
-      "total": 9991
+      "total": 10441
     }
   ]
 };
