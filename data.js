@@ -1,6 +1,6 @@
 window.julelopet = {
   "year": 2026,
-  "updatedAt": "2026-11-28T15:50:06+01:00",
+  "updatedAt": "2026-11-28T16:50:07+01:00",
   "participants": [
     {
       "name": "Christina Nilsen",
@@ -123,15 +123,15 @@ window.julelopet = {
       "start": "10:56"
     },
     {
-      "name": "Monica Myklebost",
-      "start": "10:50"
-    },
-    {
       "name": "Kristina Myklebost",
       "start": "10:50"
     },
     {
       "name": "Marta Myklebost",
+      "start": "10:50"
+    },
+    {
+      "name": "Monica Myklebost",
       "start": "10:50"
     },
     {
@@ -337,6 +337,14 @@ window.julelopet = {
     {
       "name": "Sigbjørn Egeland",
       "start": "10:50"
+    },
+    {
+      "name": "Aksel Joranger",
+      "start": "10:55"
+    },
+    {
+      "name": "Ellen Rekve",
+      "start": "10:45"
     }
   ],
   "donations": [
@@ -350,7 +358,7 @@ window.julelopet = {
     },
     {
       "year": 2026,
-      "total": 9301
+      "total": 9591
     }
   ]
 };
